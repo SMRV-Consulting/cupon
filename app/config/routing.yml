@@ -1,3 +1,7 @@
+homepage:
+    pattern:    /
+    defaults:    { _controller: OfertaBundle:Default:index }
+
 usuario:
     resource: "@UsuarioBundle/Resources/config/routing.yml"
     prefix:   /
@@ -13,4 +17,8 @@ ciudad:
 oferta:
     resource: "@OfertaBundle/Resources/config/routing.yml"
     prefix:   /
+
+pagina_estatica:
+    path:    /sitio/{pagina}/
+    defaults:    { _controller: OfertaBundle:Sitio:estatica }
 

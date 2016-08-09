@@ -1,0 +1,5 @@
+# app/config/routing_paginas.yml
+
+pagina_ayuda:
+    path:    /ayuda
+    defaults:    { template: 'OfertaBundle:Sitio:ayuda.html.twig' }
