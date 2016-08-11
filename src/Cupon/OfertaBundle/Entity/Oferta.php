@@ -233,7 +233,7 @@ class Oferta
      *
      * @return Oferta
      */
-    public function setFoto($rutaFoto)
+    public function setrutaFoto($rutaFoto)
     {
         $this->rutaFoto = $rutaFoto;
 
@@ -245,7 +245,7 @@ class Oferta
      *
      * @return string
      */
-    public function getFoto()
+    public function getrutaFoto()
     {
         return $this->rutaFoto;
     }

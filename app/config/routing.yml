@@ -1,6 +1,6 @@
-homepage:
-    pattern:    /
-    defaults:    { _controller: OfertaBundle:Default:index }
+portada:
+    path:    /
+    defaults:    { _controller: OfertaBundle:Default:portada }
 
 usuario:
     resource: "@UsuarioBundle/Resources/config/routing.yml"
