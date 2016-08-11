@@ -9,6 +9,9 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return new Response('Portada');
+        $em = $this->getDoctrine()->getManager();
+        $ciudad=$em->getRepository('CiudadBundle:Ciudad')->find(2);
+        return new Response('Portada de '.$ciudad->getNombre());
+
     }
 }

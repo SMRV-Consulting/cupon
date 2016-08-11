@@ -10,6 +10,7 @@
 
 namespace Cupon\CiudadBundle\Entity;
 
+use Cupon\OfertaBundle\Util\Util;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -41,6 +42,7 @@ class Ciudad{
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
+        $this->slug = Util::getSlug($nombre);
     }
 
     public function getNombre()
