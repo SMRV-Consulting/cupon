@@ -4,7 +4,10 @@ portada:
 
 _portada:
     path:    /
-    defaults:    { _controller: FrameworkBundle:Redirect:redirect, route: portada, ciudad: '%cupon.ciudad_por_defecto%' }
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: portada
+        ciudad: '%cupon.ciudad_por_defecto%'
 
 usuario:
     resource: "@UsuarioBundle/Resources/config/routing.yml"

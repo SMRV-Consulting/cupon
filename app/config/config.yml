@@ -3,7 +3,7 @@ imports:
     - { resource: security.yml }
 
 parameters:
-    cupon.ciudad_por_defecto:    '11'
+    cupon.ciudad_por_defecto:    "barcelona"
 
 framework:
     #esi:             ~
