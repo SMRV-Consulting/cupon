@@ -40,7 +40,7 @@ class OfertaRepository extends EntityRepository
         $consulta = $em->createQuery('SELECT o, c
                     FROM OfertaBundle:Oferta o
                     JOIN o.ciudad c
-                  WHERE o.slug != :ciudad
+                  WHERE c.slug != :ciudad
                     AND o.fechaPublicacion <= :fecha
                     AND o.revisada = TRUE  
               ORDER BY o.fechaPublicacion DESC');
