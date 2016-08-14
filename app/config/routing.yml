@@ -19,8 +19,8 @@ ciudad:
     prefix:   /
 
 oferta:
-    resource: "@OfertaBundle/Resources/config/routing.yml"
-    prefix:   /
+    path:    /{ciudad}/ofertas/{slug}
+    defaults:    { _controller: OfertaBundle:Default:oferta}
 
 pagina_estatica:
     path:    /sitio/{pagina}/
