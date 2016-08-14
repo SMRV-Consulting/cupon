@@ -13,10 +13,12 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $oferta = $em->getRepository('OfertaBundle:Oferta')->findOferta($ciudad, $slug);
+        $relacionadas = $em->getRepository('OfertaBundle:Oferta')->findRelacionadas($ciudad);
 
         return $this->render(
             'OfertaBundle:Default:detalle.html.twig',
-            array('oferta' => $oferta)
+            array('oferta'       => $oferta,
+                  'relacionadas' => $relacionadas)
         );
     }
 
@@ -27,23 +29,6 @@ class DefaultController extends Controller
     public function portadaAction($ciudad)
     {
         $em = $this->getDoctrine()->getManager();
-
-        /*if (null == $ciudad)
-        {
-            $ciudad = $this->container
-                            ->getParameter('cupon.ciudad_por_defecto');
-            return new RedirectResponse(
-                $this->generateUrl('portada', array('ciudad' => $ciudad))
-            );
-        }
-
-
-
-        $oferta = $em->getRepository('OfertaBundle:Oferta')->findOneBy(array(
-            'slug'            => $ciudad,
-            //'fechaPublicacion' => new \DateTime('today')
-        ));*/
-
         $oferta = $em->getRepository('OfertaBundle:Oferta')->findOfertaDelDia($ciudad);
 
 
