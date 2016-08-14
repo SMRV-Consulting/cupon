@@ -7,6 +7,19 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
+    public function ofertaAction($ciudad, $slug)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $oferta = $em->getRepository('OfertaBundle:Oferta')->findOferta($ciudad, $slug);
+
+        return $this->render(
+            'OfertaBundle:Default:detalle.html.twig',
+            array('oferta' => $oferta)
+        );
+    }
+
     /**
      * @param string $ciudad El slug de la ciudad activa en la aplicación
      * @return Response
