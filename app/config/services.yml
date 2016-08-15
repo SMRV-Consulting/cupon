@@ -8,3 +8,7 @@ services:
         class: Twig_Extension_Debug
         tags:
             - { name: twig.extension }
+    twig.extension.cupon:
+        class: Cupon\OfertaBundle\Twig\Extension\CuponExtension
+        tags:
+            - { name: twig.extension }
