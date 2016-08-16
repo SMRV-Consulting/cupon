@@ -59,8 +59,7 @@ function muestraCuentaAtras(){
 var horas, minutos, segundos;
 var ahora = new Date();
 var fechaExpiracion = new Date($fecha);
-var falta = Math.floor( (fechaExpiracion.getTime() - ahora.getTime()) /
-1000 );
+var falta = Math.floor((fechaExpiracion.getTime() - ahora.getTime()) / 1000);
 if (falta < 0) {
 cuentaAtras = '-';
 }

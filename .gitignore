@@ -25,4 +25,4 @@ nbproject
 .tm_properties
 Would skip repository vendor/doctrine/data-fixtures
 Would skip repository vendor/doctrine/doctrine-fixtures-bundle
-
+.idea/workspace.xml
