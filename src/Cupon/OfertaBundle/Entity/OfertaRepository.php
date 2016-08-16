@@ -14,6 +14,23 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 class OfertaRepository extends EntityRepository
 {
 
+    //Buscar las 5 ofertas mas recientes de la ciudad activa
+    public function findRecientes($ciudad_id)
+    {
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('
+            SELECT o, t
+            FROM OfertaBundle:Oferta o JOIN o.tienda t
+            WHERE o.revisada = true AND o.fechaPublicacion < :fecha AND o.ciudad = :id
+            ORDER BY o.fechaPublicacion DESC
+        ');
+        $consulta->setMaxResults(5);
+        $consulta->setParameter('id', $ciudad_id);
+        $consulta->setParameter('fecha', new \DateTime('today'));
+        $consulta->useResultCache(true, 600);
+        return $consulta->getResult();
+    }
+
     public function findOferta($ciudad, $slug)
     {
         $em = $this->getEntityManager();
