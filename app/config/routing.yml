@@ -10,6 +10,13 @@ ciudad_recientes:
     path:    /{ciudad}/recientes
     defaults:    { _controller: CiudadBundle:Default:recientes }
 
+tienda_portada:
+    path:    /{ciudad}/tiendas/{tienda}
+    defaults:    { _controller: TiendaBundle:Default:portada }
+    requirements:
+        ciudad: .+
+        tienda: .+
+
 usuario:
     resource: "@UsuarioBundle/Resources/config/routing.yml"
     prefix:   /
