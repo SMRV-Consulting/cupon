@@ -13,6 +13,11 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $oferta = $em->getRepository('OfertaBundle:Oferta')->findOferta($ciudad, $slug);
+
+        if (!$oferta) {
+            throw $this->createNotFoundException('No exite la oferta');
+        }
+
         $relacionadas = $em->getRepository('OfertaBundle:Oferta')->findRelacionadas($ciudad);
 
         return $this->render(
