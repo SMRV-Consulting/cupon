@@ -1,0 +1,23 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %}Últimas ofertas que has comprado{% endblock %}
+{% block id 'compras' %}
+{% block article %}
+    <h1>{{ block('title') }}</h1> {# Extraemos el contenido del block con la etiqueta title #}
+
+    {% for compra in compras %}
+        {# La plantilla minioferta sólo maneja ofertas por lo que debemos extraer la oferta de la variable
+            compra y pasársela a la plantilla usando la palabra reservada with #}
+        {% include 'OfertaBundle:Default:includes/minioferta.html.twig'
+            with {'oferta': compra.oferta,
+                  'comprada': true,
+                  'fechaCompra': compra.fecha
+                 } %}
+        {% else %}
+            <p>No has realizado ninguna compra.</p>
+    {% endfor %}
+{% endblock %}
+
+{% block aside %}
+    {# ... #}
+{% endblock %}

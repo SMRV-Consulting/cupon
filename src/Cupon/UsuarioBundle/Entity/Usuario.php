@@ -5,10 +5,7 @@ namespace Cupon\UsuarioBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Usuario
- *
- * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Cupon\UsuarioBundle\Entity\UsuarioRepository")
  */
 class Usuario
 {

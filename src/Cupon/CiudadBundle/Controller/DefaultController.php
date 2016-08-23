@@ -15,7 +15,7 @@ class DefaultController extends Controller
      * @return mixed
      */
     public function listaCiudadesAction($ciudad){
-        $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getEntityManager();
         $ciudades = $em->getRepository('CiudadBundle:Ciudad')->findAll();
 
         return $this->render('CiudadBundle:Default:listaCiudades.html.twig',

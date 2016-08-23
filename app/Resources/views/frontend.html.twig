@@ -13,9 +13,9 @@
 {% endblock %}
 {% block javascripts %}{% endblock %}
 {% block body %}
-    {% set ciudadSeleccionada = app.request.attributes.has('ciudad')
+    {# {% set ciudadSeleccionada = app.request.attributes.has('ciudad')
     ? app.request.attributes.get('ciudad')
-    : ciudad_por_defecto %}
+    : ciudad_por_defecto %} #}
 
     <header>
         <h1><a href="{{ path('portada', {'ciudad': ciudadSeleccionada}) }}">CUPON</a></h1>
